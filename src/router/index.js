@@ -31,10 +31,12 @@ export default new Router({
       path: '/',
       name: 'Main',
       component: MainMaster,
+      meta: 'SCM',
       children: [
         {
           path: 'home',
           name: 'home',
+          meta: '首页',
           component: Home
         }
       ]
