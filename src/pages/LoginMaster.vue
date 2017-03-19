@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="login-wrapper">
-      <transition name="fade" mode="out-in">
+      <transition name="rotateY" mode="out-in">
         <router-view></router-view>
       </transition>
   </div>
@@ -13,10 +13,10 @@ export default {
 
 <style>
   @import "../assets/styles/login.css";
-  .fade-enter-active, .fade-leave-active {
+  .rotateY-enter-active, .fade-leave-active {
     transition: All 0.3s ease;
   }
-  .fade-enter, .fade-leave-active {
+  .rotateY, .fade-leave-active {
     transform: rotateY(90deg);
   }
 </style>

@@ -8,7 +8,7 @@
           <el-col :span="24" class="breadcrumb-container">
 						<strong class="title">{{$route.meta}}</strong>
 						<el-breadcrumb separator="/" class="breadcrumb-inner">
-							<el-breadcrumb-item v-for="item in $route.matched">
+							<el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
 								{{ item.meta }}
 							</el-breadcrumb-item>
 						</el-breadcrumb>
@@ -18,11 +18,11 @@
           <router-view></router-view>
         </div>
         <div class="footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0
-    </div>
-    <strong>Copyright © 2016-2017 <a href="http://branit.cc">Branit.Lee</a>.</strong> All rights
-    reserved.
+          <div class="pull-right hidden-xs">
+            <b>Version</b> 1.0
+          </div>
+          <strong>Copyright © 2016-2017 <a href="http://branit.cc">Branit.Lee</a>.</strong> All rights
+          reserved.
         </div>
       </div>
     </div>
