@@ -35,7 +35,9 @@ import MenuButton from '../components/MenuButton.vue'
 
 export default {
   props: ['fa', 'text'],
-  components: { 'menu-button': MenuButton },
+  components: {
+    'menu-button': MenuButton
+  },
   data () {
     return {
       logoTitle: '西亚供应链管理',
@@ -52,32 +54,33 @@ export default {
 </script>
 
 <style lang="scss">
-  .header {
+.header {
     background: #3c8dbc;
     height: 50px;
     color: white;
-		.userinfo {
-			cursor: pointer;
-			line-height: 50px;
-      color: #fff;
-      padding: 0 10px;
-      display: block;
-			img {
-				width: 40px;
-				height: 40px;
-				border-radius: 40px;
-				margin: 5px 10px 5px 0px;
-				float: left;
-			}
-		}
-    .userinfo:hover {
-      background-color: #367fa9;
+    .userinfo {
+        cursor: pointer;
+        line-height: 50px;
+        color: #fff;
+        padding: 0 10px;
+        display: block;
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            margin: 5px 10px 5px 0;
+            float: left;
+        }
     }
-  }
+    .userinfo:hover {
+        background-color: #367fa9;
+    }
+}
 
-  .logo {
+.logo {
     background-color: #367fa9;
-    transition: width .3s ease-in-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
     display: block;
     float: left;
     height: 50px;
@@ -89,45 +92,43 @@ export default {
     overflow: hidden;
     cursor: pointer;
     letter-spacing: 2px;
-  }
-
-  .logo:hover {
+}
+.logo:hover {
     background-color: #357ca5;
-  }
+}
 
-  .logo-lg {
+.logo-lg {
     width: 230px !important;
-  }
+}
 
-  .logo-mini {
-    padding: 0px;
+.logo-mini {
+    padding: 0;
     letter-spacing: 0;
     font-size: 18px;
     width: 50px !important;
-  }
+}
 
-  .sidebar-toggle {
+.sidebar-toggle {
     width: 42px;
-		padding: 15px 15px;
+    padding: 15px;
     cursor: pointer;
-	}
-
-  .sidebar-toggle:hover {
+}
+.sidebar-toggle:hover {
     background-color: #367fa9;
-  }
+}
 
-  .navbar-custom-menu {
+.navbar-custom-menu {
     float: right !important;
     ul {
-      float: right;
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      li {
-        float: left;
-        display: block;
-        position: relative;
-      }
+        float: right;
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        li {
+            float: left;
+            display: block;
+            position: relative;
+        }
     }
-  }
+}
 </style>
