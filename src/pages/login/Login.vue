@@ -29,7 +29,10 @@
 </template>
 
 <script>
-import { message } from '../../modules/message'
+import { requestLogin } from '../../api.js'
+import message from '../../modules/message'
+import NProgress from 'nprogress'
+
 export default {
   data () {
     return {
@@ -45,10 +48,25 @@ export default {
       this.logining = true
       let username = this.loginModel.username
       let password = this.loginModel.password
+      // 验证登陆表单
       if (username.length < 5 || password.length < 5) {
         message.show('登陆错误：账号或密码长度最少为5位字符', 'error')
         return
       }
+      NProgress.start()
+      // 调用登陆API
+      requestLogin(this.loginModel).then(response => {
+        NProgress.done()
+        let { code, msg, token } = response.data
+        // code：200 代表成功
+        if (code !== 200) {
+          message.show(`登陆错误：${msg}`, 'error')
+        } else {
+          // 登陆成功 设置token并跳转到首页
+          sessionStorage.setItem('token', JSON.stringify(token))
+          this.$router.push({ path: '/' })
+        }
+      })
     },
     msgClose: function () {
       message.close()

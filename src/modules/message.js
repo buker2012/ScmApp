@@ -1,6 +1,6 @@
 import { Message } from 'element-ui'
 
-export const message = {
+export default {
   box: null,
   show (msg, type) {
     this.close()
