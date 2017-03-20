@@ -15,11 +15,20 @@
 					</el-col>
         </div>
         <div class="content">
-          <router-view></router-view>
+          <transition name="fade" mode="out-in">
+            <router-view></router-view>
+          </transition>
         </div>
         <div class="footer">
-          <div class="pull-right hidden-xs">
-            <b>Version</b> 1.0
+          <div class="pull-right">
+            <el-tooltip placement="top">
+              <div slot="content">
+                Base on <b>Vue2 + Plugin:Vuex&Vue-Router + UI:Element + PHP:Laravel</b>
+                <br />
+                Developer: <b>Branit Lee</b>.
+              </div>
+              <u><b>System Version 1.0</b></u>
+            </el-tooltip>
           </div>
           <strong>Copyright © 2016-2017 <a href="http://branit.cc">Branit.Lee</a>.</strong> All rights
           reserved.

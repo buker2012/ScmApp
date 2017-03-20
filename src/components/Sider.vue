@@ -2,8 +2,8 @@
   <div class="menu" :class="menuCollapsed ? 'menu-collapsed' : 'menu-expanded'">
     <!--导航菜单-->
     <transition name="fade" mode="out-in">
-    <el-menu class="el-menu-vertical-demo" theme="dark" v-if="!menuCollapsed">
-      <el-menu-item index="1"><i class="fa fa-home"></i>首页</el-menu-item>
+    <el-menu :default-active="this.$route.path" class="el-menu-vertical-demo" theme="dark" v-if="!menuCollapsed" router>
+      <el-menu-item index="/"><i class="fa fa-home"></i>首页</el-menu-item>
       <el-submenu index="2">
         <template slot="title"><i class="fa fa-list"></i>订单管理</template>
         <el-menu-item index="2-1"><i class="fa fa-circle-o"></i>未打印订单</el-menu-item>
@@ -33,9 +33,7 @@
 </template>
 
 <script>
-import {
-  mapState
-} from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   data () {
@@ -56,9 +54,11 @@ export default {
       ]
     }
   },
-  computed: mapState([
-    'menuCollapsed'
-  ])
+  computed: {
+    ...mapState([
+      'menuCollapsed'
+    ])
+  }
 }
 </script>
 

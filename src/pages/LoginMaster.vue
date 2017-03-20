@@ -12,11 +12,10 @@ export default {
 </script>
 
 <style>
-  @import "../assets/styles/login.css";
-  .rotateY-enter-active, .fade-leave-active {
+  .rotateY-enter-active, .rotateY-leave-active {
     transition: All 0.3s ease;
   }
-  .rotateY, .fade-leave-active {
+  .rotateY-enter, .rotateY-leave-active {
     transform: rotateY(90deg);
   }
 </style>

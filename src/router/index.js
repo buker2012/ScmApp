@@ -9,6 +9,8 @@ import Home from '../pages/Home.vue'
 Vue.use(Router)
 
 export default new Router({
+  hashbang: false,
+  history: true,
   routes: [
     {
       path: '/Index',
@@ -29,13 +31,11 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'Main',
       component: MainMaster,
       meta: 'SCM',
       children: [
         {
-          path: 'home',
-          name: 'home',
+          path: '',
           meta: '首页',
           component: Home
         }

@@ -6,7 +6,7 @@ import App from './App'
 import router from './router'
 import store from './vuex/store'
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-default/index.css'
+import './assets/element-theme/index.css'
 import 'nprogress/nprogress.css'
 import 'font-awesome/css/font-awesome.min.css'
 
