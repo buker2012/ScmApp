@@ -5,6 +5,7 @@ import Login from '../pages/login/Login.vue'
 import Forget from '../pages/login/Forget.vue'
 import MainMaster from '../pages/MainMaster.vue'
 import Home from '../pages/Home.vue'
+import Find from '../pages/goods/Find.vue'
 
 Vue.use(Router)
 
@@ -38,6 +39,16 @@ export default new Router({
           path: '',
           meta: '首页',
           component: Home
+        },
+        {
+          path: '/goods/new',
+          meta: '新品推荐',
+          component: Home
+        },
+        {
+          path: '/goods/find',
+          meta: '商品查询',
+          component: Find
         }
       ]
     }

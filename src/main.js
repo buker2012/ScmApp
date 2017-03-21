@@ -21,7 +21,6 @@ NProgress.configure({ showSpinner: false })
 // 路由全局钩子
 router.beforeEach((to, from, next) => {
   if (['login', 'forget'].indexOf(to.name) !== -1) {
-    console.log(to)
     next()
   } else {
     // 判断是否登陆

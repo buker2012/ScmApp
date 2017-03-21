@@ -1,9 +1,11 @@
 <template lang="html">
   <div>
-    <p>首页</p>
-    <p>首页</p>
-
-
+    <el-alert
+    title="首页建设中"
+    type="error"
+    description="程序员小哥哥正在努力Coding。。。"
+    :closable="false">
+  </el-alert>
   </div>
 </template>
 

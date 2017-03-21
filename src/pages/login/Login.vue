@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="login-body">
     <div class="login-row">
-      <div class="text-center"><span class="login-title">西亚供应链平台</span></div>
+      <div class="text-center"><span class="login-title">西亚供应商平台</span></div>
     </div>
       <div class="login-row">
         <form>
@@ -56,8 +56,8 @@ export default {
       NProgress.start()
       // 调用登陆API
       requestLogin(this.loginModel).then(response => {
-        NProgress.done()
-        let { code, msg, token } = response.data
+        let { code, msg, token, menus } = response.data
+        sessionStorage.setItem('menus', JSON.stringify(menus))
         // code：200 代表成功
         if (code !== 200) {
           message.show(`登陆错误：${msg}`, 'error')
@@ -67,6 +67,7 @@ export default {
           this.$router.push({ path: '/' })
         }
       })
+      NProgress.done()
     },
     msgClose: function () {
       message.close()

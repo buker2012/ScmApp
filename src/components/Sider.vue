@@ -4,15 +4,11 @@
     <transition name="fade" mode="out-in">
     <el-menu :default-active="this.$route.path" class="el-menu-vertical-demo" theme="dark" v-if="!menuCollapsed" router>
       <el-menu-item index="/"><i class="fa fa-home"></i>首页</el-menu-item>
-      <el-submenu index="2">
-        <template slot="title"><i class="fa fa-list"></i>订单管理</template>
-        <el-menu-item index="2-1"><i class="fa fa-circle-o"></i>未打印订单</el-menu-item>
-        <el-menu-item index="2-2"><i class="fa fa-circle-o"></i>已打印订单</el-menu-item>
-      </el-submenu>
-      <el-submenu index="3">
-        <template slot="title"><i class="fa fa-suitcase"></i>商品管理</template>
-        <el-menu-item index="3-1"><i class="fa fa-circle-o"></i>商品查询</el-menu-item>
-        <el-menu-item index="3-2"><i class="fa fa-circle-o"></i>推荐商品</el-menu-item>
+      <el-submenu :index="menu.code" v-for="menu in topMenus()" :key="menu.code">
+        <template slot="title"><i class="fa" :class="menu.pic"></i>{{menu.name}}</template>
+        <el-menu-item :index="submenu.window_name" v-for="submenu in subMenus(menu.code)" :key="submenu.code">
+          <i class="fa fa-circle-o"></i>{{submenu.name}}
+        </el-menu-item>
       </el-submenu>
     </el-menu>
     <!--折叠菜单-->
@@ -38,20 +34,21 @@ import { mapState } from 'vuex'
 export default {
   data () {
     return {
-      menuList: [
-        {
-          index: 1,
-          title: '首页',
-          icon: 'fa-home',
-          showSubMenu: false
-        },
-        {
-          index: 2,
-          title: '导航一',
-          icon: 'fa-list',
-          showSubMenu: false
-        }
-      ]
+      menuList: JSON.parse(sessionStorage.getItem('menus'))
+    }
+  },
+  methods: {
+    topMenus: function () {
+      console.log(this.menuList)
+      return this.menuList.filter(menu => {
+        return menu.jb === '1'
+      })
+    },
+    subMenus: function (upcode) {
+      console.log(upcode)
+      return this.menuList.filter(menu => {
+        return menu.up_code === upcode
+      })
     }
   },
   computed: {
