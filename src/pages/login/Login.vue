@@ -56,6 +56,7 @@ export default {
       NProgress.start()
       // 调用登陆API
       requestLogin(this.loginModel).then(response => {
+        NProgress.done()
         let { code, msg, token, menus } = response.data
         sessionStorage.setItem('menus', JSON.stringify(menus))
         // code：200 代表成功
@@ -67,7 +68,6 @@ export default {
           this.$router.push({ path: '/' })
         }
       })
-      NProgress.done()
     },
     msgClose: function () {
       message.close()

@@ -1,3 +1,4 @@
+// 单例可独立使用的ele-message组件
 import { Message } from 'element-ui'
 
 export default {

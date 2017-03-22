@@ -16,7 +16,9 @@
             </el-col>
           </div>
           <transition name="fade" mode="out-in">
-            <router-view></router-view>
+            <keep-alive>
+              <router-view></router-view>
+            </keep-alive>
           </transition>
         </div>
         <div class="footer">
@@ -92,6 +94,7 @@ export default {
       -ms-flex:1;
       flex:1;
       background: #ecf0f5;
+      min-width: 1px;
       .content {
         .site-map {
           height: 50px;
@@ -103,17 +106,21 @@ export default {
         -webkit-box-flex: 1;
         -ms-flex: 1;
         flex: 1;
+        display: flex;
+        flex-direction: column;
         overflow-y: scroll;
+        border-bottom: 1px solid #d2d6de;
       }
       .footer {
+        height: 40px;
+        line-height: 40px;
+        padding: 0px 15px;
         font-size: 14px;
         background: #fff;
-        padding: 15px;
         color: #444;
-        border-top: 1px solid #d2d6de;
+
       }
     }
   }
 }
-
 </style>

@@ -1,6 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-// import babelpolyfill from 'babel-polyfill'
+import babelpolyfill from 'babel-polyfill'
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -12,8 +12,10 @@ import mock from './mock'
 import './assets/element-theme/index.css'
 import 'nprogress/nprogress.css'
 import 'font-awesome/css/font-awesome.min.css'
+import 'normalize.css/normalize.css'
 
 Vue.config.productionTip = false
+Vue.use(babelpolyfill)
 Vue.use(ElementUI)
 mock.setup()
 NProgress.configure({ showSpinner: false })
@@ -35,7 +37,6 @@ router.beforeEach((to, from, next) => {
 
 /* eslint-disable no-new */
 new Vue({
-  mode: 'history',
   el: '#app',
   router,
   store,

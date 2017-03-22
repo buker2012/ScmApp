@@ -13,7 +13,7 @@ export const scmApp = [
     name: '新品推荐',
     jb: '2',
     up_code: '01',
-    window_name: 'goods/new',
+    window_name: '/goods/new',
     pic: '',
     func: 'F,A,E,D,C,P,X'
   },
@@ -22,7 +22,7 @@ export const scmApp = [
     name: '商品查询',
     jb: '2',
     up_code: '01',
-    window_name: 'goods/find',
+    window_name: '/goods/find',
     pic: '',
     func: 'F,A,E,D,C,P,X'
   },
@@ -40,7 +40,7 @@ export const scmApp = [
     name: '未打印订单',
     jb: '2',
     up_code: '02',
-    window_name: 'order/noprint',
+    window_name: '/order/noprint',
     pic: '',
     func: 'F,A,E,D,C,P,X'
   },
@@ -49,7 +49,7 @@ export const scmApp = [
     name: '已打印订单',
     jb: '2',
     up_code: '02',
-    window_name: 'order/printed',
+    window_name: '/order/printed',
     pic: '',
     func: 'F,A,E,D,C,P,X'
   },
@@ -58,7 +58,7 @@ export const scmApp = [
     name: '已送货订单',
     jb: '2',
     up_code: '02',
-    window_name: 'order/sended',
+    window_name: '/order/sended',
     pic: '',
     func: 'F,A,E,D,C,P,X'
   },
@@ -67,7 +67,7 @@ export const scmApp = [
     name: '已验收订单',
     jb: '2',
     up_code: '02',
-    window_name: 'order/accepted',
+    window_name: '/order/accepted',
     pic: '',
     func: 'F,A,E,D,C,P,X'
   },
@@ -85,7 +85,7 @@ export const scmApp = [
     name: '子账户查询',
     jb: '2',
     up_code: '09',
-    window_name: 'subuser/find',
+    window_name: '/subuser/find',
     pic: '',
     func: 'F,A,E,D,C,P,X'
   },
@@ -94,7 +94,7 @@ export const scmApp = [
     name: '子帐户授权管理',
     jb: '2',
     up_code: '09',
-    window_name: 'subuser/auth',
+    window_name: '/subuser/auth',
     pic: '',
     func: 'F,A,E,D,C,P,X'
   }

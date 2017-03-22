@@ -2,6 +2,7 @@ import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 import {scmApp} from './data/scmApp.js'
 import {mkGoods} from './data/goods.js'
+import {mkOrders} from './data/orders.js'
 
 export default {
   setup () {
@@ -25,6 +26,15 @@ export default {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve([200, {code: 200, goods: mkGoods(pageSize)}])
+        }, 1000)
+      })
+    })
+    // 拦截订单查询
+    mock.onPost('/getOrders').reply(config => {
+      let { pageSize } = JSON.parse(config.data)
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve([200, {code: 200, orders: mkOrders(pageSize)}])
         }, 1000)
       })
     })

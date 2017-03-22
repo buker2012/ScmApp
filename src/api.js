@@ -9,3 +9,7 @@ export const requestLogin = params => {
 export const getGoods = params => {
   return axios.post(`${url}/getGoods`, params)
 }
+
+export const getOrders = params => {
+  return axios.post(`${url}/getOrders`, params)
+}
